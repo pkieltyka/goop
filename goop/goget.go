@@ -37,7 +37,7 @@ func (d *DownloadRecorder) Downloads() []string {
 }
 
 func (g *Goop) goGet(pkgpath string, gopath string) ([]string, error) {
-	cmd := exec.Command("go", "get", "-d", "-v", "./...")
+	cmd := exec.Command("go", "get", "-d", "-v", ".")
 	env := g.patchedEnv(true)
 	env["GOPATH"] = gopath
 	cmd.Dir = pkgpath
